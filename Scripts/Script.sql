@@ -64,5 +64,12 @@ insert into student values(700, '곽재우');
 insert into student values(800, '임경업');
 
 select studNo, studName from student;
+
 select studNo, studKor, studEng, studMath from grade;
 
+insert into grade values(100, 85, 30, 100);
+insert into grade values(200, 75, 70, 90);
+
+delete from grade;
+
+select

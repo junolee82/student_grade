@@ -37,7 +37,7 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return "Student [studNo=" + studNo + ", studName=" + studName + "]";
-	}
+		return String.format("Student [%s, %s]", studNo, studName);
+	}	
 
 }
