@@ -72,4 +72,4 @@ insert into grade values(200, 75, 70, 90);
 
 delete from grade;
 
-select
+insert into grade(studNo, studKor, studEng, studMath) values(300, 65, 99, 100);

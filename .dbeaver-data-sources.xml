@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data-sources>
-	<data-source id="mysql5-159344b4878-6cb34587df567663" provider="mysql" driver="mysql5" name="MySQL - student_grade(root)" create-date="1482641088417" login-date="1482641089875" save-password="true" show-system-objects="true" read-only="false">
+	<data-source id="mysql5-159344b4878-6cb34587df567663" provider="mysql" driver="mysql5" name="MySQL - student_grade(root)" create-date="1482641088417" update-date="1483288539252" login-date="1483327966343" save-password="true" show-system-objects="true" read-only="false">
 		<connection host="localhost" port="3306" server="" database="student_grade" url="jdbc:mysql://localhost:3306/student_grade" user="root" password="AhcDLk8jpQ==" home="C:\Program Files\MySQL\MySQL Server 5.7" type="dev">
 			<network-handler type="TUNNEL" id="ssh_tunnel" enabled="false" user="" save-password="false">
 				<property name="sshConnectTimeout" value="10000"/>
@@ -25,14 +25,12 @@
 			<bootstrap/>
 		</connection>
 	</data-source>
-	<data-source id="mysql5-159344cdbf3-768a6127bf21fae8" provider="mysql" driver="mysql5" name="MySQL - student_grade(user)" create-date="1482641185833" login-date="1482641188114" save-password="true" show-system-objects="true" read-only="false">
+	<data-source id="mysql5-159344cdbf3-768a6127bf21fae8" provider="mysql" driver="mysql5" name="MySQL - student_grade(user)" create-date="1482641185833" update-date="1483328484585" login-date="1483327965029" save-password="true" show-system-objects="true" read-only="false">
 		<connection host="localhost" port="3306" server="" database="student_grade" url="jdbc:mysql://localhost:3306/student_grade" user="user_student" password="AQsJNFNMSwJl8w==" home="C:\Program Files\MySQL\MySQL Server 5.7" type="dev">
-			<network-handler type="TUNNEL" id="ssh_tunnel" enabled="false" user="" save-password="false">
-				<property name="sshConnectTimeout" value="10000"/>
-				<property name="port" value="22"/>
-				<property name="keyPath" value=""/>
-				<property name="host" value=""/>
-				<property name="authType" value="PASSWORD"/>
+			<property name="connectTimeout" value="20000"/>
+			<network-handler type="PROXY" id="socks_proxy" enabled="false" user="" save-password="false">
+				<property name="socks-host" value=""/>
+				<property name="socks-port" value="1080"/>
 			</network-handler>
 			<network-handler type="CONFIG" id="mysql_ssl" enabled="false" user="" save-password="false">
 				<property name="ssl.public.key.retrieve" value="false"/>
@@ -43,11 +41,14 @@
 				<property name="ssl.cipher.suites" value=""/>
 				<property name="ssl.require" value="false"/>
 			</network-handler>
-			<network-handler type="PROXY" id="socks_proxy" enabled="false" user="" save-password="false">
-				<property name="socks-host" value=""/>
-				<property name="socks-port" value="1080"/>
+			<network-handler type="TUNNEL" id="ssh_tunnel" enabled="false" user="" save-password="false">
+				<property name="sshConnectTimeout" value="10000"/>
+				<property name="port" value="22"/>
+				<property name="keyPath" value=""/>
+				<property name="host" value=""/>
+				<property name="authType" value="PASSWORD"/>
 			</network-handler>
-			<bootstrap/>
+			<bootstrap txnIsolation="4"/>
 		</connection>
 	</data-source>
 </data-sources>

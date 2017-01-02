@@ -2,7 +2,7 @@ package kr.or.dgit.student.dto;
 
 public class Grade {
 	// studNo, studKor, studEng, studMath;
-	private int studNo;
+	private Student student;
 	private int studKor;
 	private int studEng;
 	private int studMath;
@@ -11,20 +11,20 @@ public class Grade {
 		super();
 	}
 
-	public Grade(int studNo, int studKor, int studEng, int studMath) {
+	public Grade(Student student, int studKor, int studEng, int studMath) {
 		super();
-		this.studNo = studNo;
+		this.student = student;
 		this.studKor = studKor;
 		this.studEng = studEng;
 		this.studMath = studMath;
 	}
 
-	public int getStudNo() {
-		return studNo;
+	public Student getStudent() {
+		return student;
 	}
 
-	public void setStudNo(int studNo) {
-		this.studNo = studNo;
+	public void setStudent(Student student) {
+		this.student = student;
 	}
 
 	public int getStudKor() {
@@ -53,7 +53,7 @@ public class Grade {
 
 	@Override
 	public String toString() {
-		return String.format("Grade [%s, %s, %s, %s]", studNo, studKor, studEng, studMath);
+		return String.format("Grade [%s, %s, %s, %s]", student, studKor, studEng, studMath);
 	}
 
 }
