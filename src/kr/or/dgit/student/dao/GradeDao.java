@@ -38,6 +38,15 @@ public class GradeDao {
 		}
 		return -1;
 	}
-	
-	
+
+	public void deleteAllGrade() {
+		Connection con = DBConnection.getConnection();
+		String query = "delete from grade";
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }
